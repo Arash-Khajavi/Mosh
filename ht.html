@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>YouTube Video Search</title>
+    <style>
+        iframe {
+            width: 560px;
+            height: 315px;
+            margin: 10px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search YouTube Videos</h1>
+
+    <!-- Search Form -->
+    <form action="/" method="get">
+        <input type="text" name="query" placeholder="Search YouTube" value="{{ query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if videos %}
+        <h2>Results for "{{ query }}"</h2>
+        {% for video in videos %}
+            <div>
+                <h3>{{ video.title }}</h3>
+                <p>Channel: {{ video.channelTitle }}</p>
+                <iframe src="{{ video.embedUrl }}" allowfullscreen></iframe>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</body>
+</html>
+
+
