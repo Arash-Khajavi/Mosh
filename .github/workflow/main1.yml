@@ -21,6 +21,6 @@ jobs:
 
     - name: Run script
       env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI }}
+        OPENAI_API_KEY: ${{ secrets.youtube1 }}
       run: |
         python m.py
