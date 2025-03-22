@@ -1,9 +1,9 @@
 requests
 from flask import Flask, render_template, request
-
+import os
 app = Flask(__name__)
 
-API_KEY = "AIzaSyBag3zuHzdbF6N4lswUJjRwYn7PqVltLwM"
+API_KEY = os.getenev()
 API_URL = "https://www.googleapis.com/youtube/v3/search"
 
 
