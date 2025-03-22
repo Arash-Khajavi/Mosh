@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 import os
 app = Flask(__name__)
 
-API_KEY = os.getenev()
+API_KEY = os.getenev("Youtube")
 API_URL = "https://www.googleapis.com/youtube/v3/search"
 
 
